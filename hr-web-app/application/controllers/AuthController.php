@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require_once(APPPATH . 'core/MY_Controller.php');
 
 class AuthController extends MY_Controller
 {
@@ -15,7 +14,7 @@ class AuthController extends MY_Controller
 
 	public function login()
 	{
-		$this->load->mini_layout("auth/login", $this->data);
+		$this->load->mini_layout("main/auth/login", $this->data);
 	}
 
 	public function authenticate()
