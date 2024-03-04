@@ -1,6 +1,6 @@
 <?php
 
-class RequestsController extends My_Controller
+class RequestsController extends my_controller
 {
 	public function __construct()
 	{

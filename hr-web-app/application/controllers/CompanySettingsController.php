@@ -1,6 +1,6 @@
 <?php
 // 
-class CompanySettingsController extends My_Controller
+class CompanySettingsController extends my_controller
 {
 	public $data;
 	public function __construct()

@@ -1,6 +1,6 @@
 <?php
 
-class UserAccountController extends My_Controller
+class UserAccountController extends my_controller
 {
 	public $data;
 	public function __construct()

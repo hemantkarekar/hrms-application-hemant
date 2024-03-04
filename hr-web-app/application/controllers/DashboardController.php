@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(APPPATH . 'core/My_controller.php');
 
-class DashboardController extends My_Controller
+class DashboardController extends my_controller
 {
 	public $data;
 
