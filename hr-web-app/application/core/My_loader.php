@@ -1,6 +1,6 @@
 <?php
 
-class My_Loader extends CI_Loader
+class My_loader extends CI_Loader
 {
 	public function __construct()
 	{
