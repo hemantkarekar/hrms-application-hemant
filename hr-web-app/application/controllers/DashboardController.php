@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class DashboardController extends My_Controller
+class DashboardController extends MY_Controller
 {
 	public $data;
 
