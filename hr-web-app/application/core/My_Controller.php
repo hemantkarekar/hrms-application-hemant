@@ -7,7 +7,6 @@ class My_Controller extends CI_Controller
 	public $COMPANY_NAME = "";
 	public function __construct()
 	{
-
 		parent::__construct();
 		$this->COMPANY_NAME = "Sociomark";
 		if (!is_https()) {
