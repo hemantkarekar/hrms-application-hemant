@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-require_once(APPPATH . 'core/My_controller.php');
 
 class AuthController extends MY_Controller
 {
