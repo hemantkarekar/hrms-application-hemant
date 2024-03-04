@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 require_once(APPPATH . 'core/My_controller.php');
 
-class AuthController extends my_controller
+class AuthController extends My_Controller
 {
 	public $data;
 

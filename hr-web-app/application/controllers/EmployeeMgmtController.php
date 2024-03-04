@@ -1,6 +1,6 @@
 <?php
 
-class EmployeeMgmtController extends my_controller
+class EmployeeMgmtController extends My_Controller
 {
 	public $data;
 	public function __construct()
