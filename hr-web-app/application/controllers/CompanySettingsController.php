@@ -1,5 +1,6 @@
 <?php
 // 
+require_once APPPATH . "core/My_Controller.php";
 class CompanySettingsController extends MY_Controller
 {
 	public $data;
