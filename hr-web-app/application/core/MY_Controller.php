@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set("Asia/Kolkata");
 
-class my_controller extends CI_Controller
+class MY_Controller extends CI_Controller
 {
 	public $COMPANY_NAME = "";
 	public function __construct()
