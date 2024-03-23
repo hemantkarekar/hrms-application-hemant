@@ -19,6 +19,12 @@ class EmployeeMgmtController extends MY_Controller
 	}
 
 	public function  all_departments() {
+		$this->load->model('org_settings/DepartmentsModel');
+		$data = json_decode($this->DepartmentsModel->get(['name', 'parent_id'], ['app_id' => $this->APP_ID]), true);
+		$this->data['departments'] = [];
+		foreach ($data as $key => $dept) {
+			array_push($this->data['departments'], $dept['name']);
+		}
 		$this->data['page'] = [
 			"title" => "All Departments" . " - " . $this->COMPANY_NAME
 		];

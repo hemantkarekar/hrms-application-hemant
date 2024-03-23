@@ -159,7 +159,7 @@
 		<div class="col-xxl-2 col-xl-3 col-12">
 			<div class="p-3 bg-light">
 				<div class="mb-3">
-					<h5>Timing, Attendance & Holidays</h5>
+					<h5>All Employees Data</h5>
 				</div>
 				<div class="desc">
 					<p>

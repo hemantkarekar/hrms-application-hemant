@@ -27,10 +27,10 @@
 											</tr>
 										</thead>
 										<tbody>
-											<?php for ($i = 0; $i < 10; $i++) : ?>
+											<?php for ($i = 0; $i < count($departments); $i++) : ?>
 												<tr>
-													<td> Department <?= $i ?></td>
-													<td> Parent Department <?= $i ?></td>
+													<td> <?= $departments[$i] ?></td>
+													<td>NA</td>
 												</tr>
 											<?php endfor ?>
 										</tbody>
@@ -61,8 +61,9 @@
 											<div class="mb-3">
 												<label for="" class="form-label">Select Parent Department</label>
 												<select class="form-select" name="" id="select2ParentDepartment">
-													<?php for ($i = 0; $i < 10; $i++) : ?>
-														<option value=""> Department <?= $i ?></option>
+													<option value="">Select Parent Department</option>
+													<?php for ($i = 0; $i < count($departments); $i++) : ?>
+														<option value="<?= $departments[$i] ?>"> <?= $departments[$i] ?></option>
 													<?php endfor ?>
 												</select>
 												<script>

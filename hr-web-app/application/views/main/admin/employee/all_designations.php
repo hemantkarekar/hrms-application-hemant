@@ -30,6 +30,9 @@
 												<tr>
 													<td> Designation <?= $i ?></td>
 												</tr>
+												<tr>
+													<td> Department <?= $i ?></td>
+												</tr>
 											<?php endfor ?>
 										</tbody>
 										<script>
@@ -49,15 +52,23 @@
 										<h5>Create a New Designation</h5>
 									</div>
 									<div class="row">
+
 										<div class="col-lg-6 col-12">
 											<div class="mb-3">
-												<label for="" class="form-label">Designation Name</label>
-												<input type="text" class="form-control">
+												<label for="" class="form-label">Select Department</label>
+												<select class="form-select" name="" id="select2Department">
+													<?php for ($i = 0; $i < 10; $i++) : ?>
+														<option value=""> Designation <?= $i ?></option>
+													<?php endfor ?>
+												</select>
+												<script>
+													$("#select2Department").select2();
+												</script>
 											</div>
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="mb-3">
-												<label for="" class="form-label">Select Parent Designation</label>
+												<label for="" class="form-label">Designation Reporting to</label>
 												<select class="form-select" name="" id="select2ParentDesignation">
 													<?php for ($i = 0; $i < 10; $i++) : ?>
 														<option value=""> Designation <?= $i ?></option>
@@ -66,6 +77,12 @@
 												<script>
 													$("#select2ParentDesignation").select2();
 												</script>
+											</div>
+										</div>
+										<div class="col-lg-6 col-12">
+											<div class="mb-3">
+												<label for="" class="form-label">Designation Name</label>
+												<input type="text" class="form-control">
 											</div>
 										</div>
 										<div class="col-12">

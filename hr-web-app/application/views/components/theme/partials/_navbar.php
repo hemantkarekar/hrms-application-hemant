@@ -12,6 +12,7 @@
 			</div>
 		</form>
 		<ul class="navbar-nav">
+			<li class="nav-item">XXX.XXX.XXX.XXX</li>
 			<li class="nav-item">
 				<button id="startTour" class="btn nav-link">
 					<i data-feather="help-circle"></i>

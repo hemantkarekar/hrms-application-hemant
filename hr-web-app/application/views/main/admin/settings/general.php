@@ -42,7 +42,12 @@
 										</div>
 										<div class="col-lg-8 col-md-6 col-12 grid-margin">
 											<label for="" class="form-label">State</label>
-											<input type="text" class="form-control">
+											<select name="" id="selectState" class="form-control">
+												<option value="">Select State</option>
+											</select>
+											<script>
+												$("#selectState").select2()
+											</script>
 										</div>
 										<div class="col-lg-4 col-md-6 col-12 grid-margin">
 											<label for="" class="form-label">Pin Code</label>
@@ -70,7 +75,10 @@
 									<div class="row">
 										<div class="col-12 grid-margin">
 											<label for="" class="form-label">Brand Logo</label>
-											<input type="file" name="" id="" class="form-control">
+											<div class="input-group">
+												<img class="input-group-text" src="<?= base_url("uploads/clients_logo/") ?>sc-colored-horizontal.png" style="display: inline; height:38px">
+												<input type="file" name="" value="filename.png" id="" class="form-control">
+											</div>
 										</div>
 									</div>
 									<div class="p-3 bg-light">

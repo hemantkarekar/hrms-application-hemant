@@ -75,20 +75,29 @@ class AuthController extends MY_Controller
 
 	public function resend_key()
 	{
-		$result = json_decode($this->EnquiriesModel->get(['id'], ['work_email' => $this->input->post('work_email')]), true);
+		$result = json_decode($this->EnquiriesModel->get(['id', 'is_onboard'], ['work_email' => $this->input->post('work_email')]), true);
 		if (count($result) > 0) {
 			$result = $result[0];
-			$key = random_string('alnum', 16);
-			$key_expires = date('Y-m-d h:i:s', strtotime("+1 day"));
-			$data = [
-				"email_validated" => 0,
-				"email_validate_key" => $key,
-				"email_validate_key_expires" => $key_expires,
-			];
-			if ($this->EnquiriesModel->update($data, ['id' => $result['id']])) {
-				redirect('onboarding/home?key=' . $key);
+			if ($result['is_onboard']) {
+				$entry = json_decode($this->UserModel->get(['app_id'], ['email' => $this->input->post('work_email')]), true);
+				if (count($entry) > 0) {
+					$entry = $entry[0];
+					set_cookie("app_id", $entry["app_id"], 60000);
+					redirect('settings/app-settings/home');
+				}
 			} else {
-				echo "ERROR";
+				$key = random_string('alnum', 16);
+				$key_expires = date('Y-m-d h:i:s', strtotime("+1 day"));
+				$data = [
+					"email_validated" => 1,
+					"email_validate_key" => $key,
+					"email_validate_key_expires" => $key_expires,
+				];
+				if ($this->EnquiriesModel->update($data, ['id' => $result['id']])) {
+					redirect('onboarding/home?key=' . $key);
+				} else {
+					echo "ERROR";
+				}
 			}
 		}
 	}

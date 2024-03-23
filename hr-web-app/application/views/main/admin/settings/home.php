@@ -23,27 +23,31 @@
 							<table class="table table-sm table-striped">
 								<tr>
 									<td>Name</td>
-									<td>Company Name</td>
+									<td><?= $settings['company'][0]['name'] ?></td>
 								</tr>
 								<tr>
 									<td>Company Logo</td>
-									<td>Yes</td>
+									<td><?= explode(FCPATH, $settings['company'][0]['logo'])[1] ?></td>
 								</tr>
 								<tr>
 									<td>Company Address</td>
-									<td>N/A</td>
+									<td><?= $settings['company'][0]['address'] ?></td>
 								</tr>
 								<tr>
 									<td>GSTIN</td>
-									<td>N/A</td>
+									<td><?= $settings['company'][0]['gstin'] ?></td>
 								</tr>
 								<tr>
 									<td>PAN</td>
-									<td>N/A</td>
+									<td><?= $settings['company'][0]['pan'] ?></td>
 								</tr>
 								<tr>
 									<td>TAN</td>
-									<td>N/A</td>
+									<td><?= $settings['company'][0]['tan'] ?></td>
+								</tr>
+								<tr>
+									<td>Company ID</td>
+									<td><?= get_cookie('app_id') ?></td>
 								</tr>
 							</table>
 						</div>

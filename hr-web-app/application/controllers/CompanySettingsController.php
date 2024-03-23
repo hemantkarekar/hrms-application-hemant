@@ -12,8 +12,13 @@ class CompanySettingsController extends MY_Controller
 	{
 		switch ($setting) {
 			case 'home':
+				// echo $this->get_ip_info(); die;
 				// echo "General Company Settings";
-				$this->load->admin_dashboard('admin/settings/home');
+				$this->load->model("org_settings/CoreCompanySettingsModel", "CoreSettingsModel"); 
+				$arr = json_decode($this->CoreSettingsModel->company_settings(get_cookie('app_id')), true)[0];
+				$company_settings = json_decode($arr['settings_value'], true);
+				$this->data['settings']['company'] = $company_settings;
+				$this->load->admin_dashboard('admin/settings/home', $this->data);
 				break;
 
 			case 'general':

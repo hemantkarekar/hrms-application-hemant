@@ -58,11 +58,28 @@
 										<div class="row m-0">
 											<div class="col-xl-4 col-lg-6 col-12 grid-margin">
 												<div class="">
-													<label for="formInput" class="form-label">Organization Type</label>
-													<select name="company_details[company_type]" id="formInput4" class="form-select" required>
+													<label for="select2CompanyType" class="form-label">Organization Type</label>
+													<select name="company_details[company_type]" id="select2CompanyType" class="form-select" required>
 														<option value="LLP">Limited Liability Partnership (LLP)</option>
 														<option value="LLP">Corporate Ownership</option>
+														<option value="One Person Company">One Person Company</option>
+														<option value="Cooperatives">Cooperatives</option>
+														<option value="Private Limited Company">Private Limited Company</option>
+														<option value="Company">Company</option>
+														<option value="Cooperative Society">Cooperative Society</option>
+														<option value="Holding Company">Holding Company</option>
+														<option value="Section 8 Company">Section 8 Company</option>
+														<option value="Corporations or Statutory Bodies">Corporations or Statutory Bodies</option>
+														<option value="Sole Proprietorship">Sole Proprietorship</option>
+														<option value="Family Business">Family business</option>
+														<option value="Business">Business</option>
+														<option value="Government Organizations">Government Organizations</option>
+														<option value="NGOs">Non-Government Organizations</option>
+														<option value="Unlimited Company">Unlimited Company</option>
 													</select>
+													<script>
+														$("#select2CompanyType").select2();
+													</script>
 												</div>
 											</div>
 											<div class="col-xl-3 col-lg-6 col-12 grid-margin">

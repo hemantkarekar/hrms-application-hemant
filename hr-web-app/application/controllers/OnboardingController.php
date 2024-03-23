@@ -34,7 +34,7 @@ class OnboardingController extends MY_Controller
 	public function process_onboarding() {
 		$this->load->model("UserModel");
 		$this->load->model("website/EnquiriesModel");
-		if($this->EnquiriesModel->update(['is_onboarded' => 1, 'email_validated' => 1], ['email_validate_key' => $this->input->post('auth_key')])){
+		if($this->EnquiriesModel->update(['is_onboard' => 1, 'email_validated' => 1], ['email_validate_key' => $this->input->post('auth_key')])){
 			print_r("Updated");
 		} else {
 			print_r("Update Error");
