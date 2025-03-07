@@ -8,19 +8,6 @@ class MY_Loader extends CI_Loader
 		$CI =& get_instance();
         $CI->load = $this;
 	}
-	public function admin_dashboard($view, $vars = array(), $return = FALSE)
-	{
-		$this->view('layout/_1', $vars);
-		$this->view("main/" . $view, $vars);
-		$this->view('layout/_2', $vars);
-	}
-	
-	public function event_dashboard($view, $vars = array(), $return = FALSE)
-	{
-		$this->view('layout/_1', $vars);
-		$this->view("main/" . $view, $vars);
-		$this->view('layout/_2', $vars);
-	}
 	
 	public function onboarding_view($view, $vars = array(), $return = FALSE)
 	{
