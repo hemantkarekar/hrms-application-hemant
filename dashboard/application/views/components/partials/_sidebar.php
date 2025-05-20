@@ -17,6 +17,12 @@
 					<span class="link-title">Dashboard</span>
 				</a>
 			</li>
+			<li class="nav-item <?= link_is_active("") ?>">
+				<a href="<?= base_url() ?>" class="nav-link">
+					<i class="link-icon" data-feather="box"></i>
+					<span class="link-title">Dashboard</span>
+				</a>
+			</li>
 
 			<!-- Nominations -->
 			<li class="nav-item nav-category">Events Management</li>
