@@ -66,7 +66,8 @@
 
 <link rel="stylesheet" href="<?= base_url("assets") ?>/css/custom.min.css">
 
-<?php switch (explode(base_url(), current_url())[1]):
+<?php 
+switch (explode(base_url(), current_url())[1]):
 	case 'dashboard': ?>
 		<?php
 		if ($this->session->userdata('first_user')) :

@@ -18,76 +18,48 @@
 				</a>
 			</li>
 
-			<!-- Nominations -->
-			<li class="nav-item nav-category">Events Management</li>
+			<!-- Projects -->
+			<li class="nav-item nav-category">Projects Management</li>
 			<!-- Access Level: jury -->
 			<li class="nav-item">
 				<a href="<?= base_url('nominations') ?>" class="nav-link">
-					<i class="link-icon" data-feather="database"></i>
-					<span class="link-title">All Events</span>
+					<i class="link-icon" data-feather="users"></i>
+					<span class="link-title">Clients</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="<?= base_url('nominations') ?>" class="nav-link">
-					<i class="link-icon" data-feather="book"></i>
-					<span class="link-title">New Event</span>
-				</a>
-			</li>
-
-			<!-- Nominations -->
-			<li class="nav-item nav-category">Content Management</li>
-			<!-- Access Level: jury -->
-            <li class="nav-item">
-				<a class="nav-link" data-bs-toggle="collapse" href="#blogs" role="button" aria-expanded="false" aria-controls="blogs">
+				<a class="nav-link" data-bs-toggle="collapse" href="#projects" role="button" aria-expanded="false" aria-controls="projects">
 					<i class="link-icon" data-feather="database"></i>
-					<span class="link-title">Blogs</span>
+					<span class="link-title">Projects</span>
 					<i class="link-arrow" data-feather="chevron-down"></i>
 				</a>
-				<div class="collapse" id="blogs">
+				<div class="collapse" id="projects">
 					<ul class="nav sub-menu">
 						<li class="nav-item">
-							<a href="#" class="nav-link">All Blogs</a>
+							<a href="#" class="nav-link">All Projects</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">Add New Blog</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-            <li class="nav-item">
-				<a class="nav-link" data-bs-toggle="collapse" href="#episodes" role="button" aria-expanded="false" aria-controls="episodes">
-					<i class="link-icon" data-feather="database"></i>
-					<span class="link-title">Episodes</span>
-					<i class="link-arrow" data-feather="chevron-down"></i>
-				</a>
-				<div class="collapse" id="episodes">
-					<ul class="nav sub-menu">
-						<li class="nav-item">
-							<a href="#" class="nav-link">All Episodes</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link">Add New Episode</a>
+							<a href="#" class="nav-link">Add New Project</a>
 						</li>
 					</ul>
 				</div>
 			</li>
 			<li class="nav-item">
-				<a href="<?= base_url('') ?>" class="nav-link">
-					<i class="link-icon" data-feather="bookmark"></i>
-					<span class="link-title">Categories</span>
+				<a class="nav-link" data-bs-toggle="collapse" href="#tasks" role="button" aria-expanded="false" aria-controls="tasks">
+					<i class="link-icon" data-feather="database"></i>
+					<span class="link-title">Tasks</span>
+					<i class="link-arrow" data-feather="chevron-down"></i>
 				</a>
-			</li>
-			<li class="nav-item">
-				<a href="<?= base_url('') ?>" class="nav-link">
-					<i class="link-icon" data-feather="bookmark"></i>
-					<span class="link-title">Tags</span>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a href="<?= base_url('') ?>" class="nav-link">
-					<i class="link-icon" data-feather="message-square"></i>
-					<span class="link-title">Comments</span>
-				</a>
+				<div class="collapse" id="tasks">
+					<ul class="nav sub-menu">
+						<li class="nav-item">
+							<a href="#" class="nav-link">All Tasks</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Add New Task</a>
+						</li>
+					</ul>
+				</div>
 			</li>
 
 			<!-- Access Level: admin -->

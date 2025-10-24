@@ -299,13 +299,13 @@
                     </div>
                     <ul class="list-unstyled p-1">
                         <li class="dropdown-item py-2">
-                            <a href="<?= base_url("profile") ?>" class="text-body ms-0">
+                            <a href="<?= base_url("my-profile") ?>" class="text-body ms-0">
                                 <i class="me-2 icon-md" data-feather="user"></i>
                                 <span>Profile</span>
                             </a>
                         </li>
                         <li class="dropdown-item py-2">
-                            <a href="<?= base_url("") ?>" class="text-body ms-0">
+                            <a href="<?= base_url("logout") ?>" class="text-body ms-0">
                                 <i class="me-2 icon-md" data-feather="repeat"></i>
                                 <span>Switch User</span>
                             </a>

@@ -14,6 +14,16 @@ class MY_Controller extends CI_Controller
 			$this->session->set_flashdata('http_error', 'Please change url to HTTPS!!');
 		}
 		$this->APP_ID = get_cookie("app_id", true);
+        $this->APP_STORAGE = directory_size(FILE_UPLOAD_FOLDER);
+		
+        if(!isset($_SESSION[USERSESSION])){
+			$this->SESSION = $_SESSION[USERSESSION];
+			$this->SESSION['name'] = implode(" ", [$this->SESSION['first_name'], $this->SESSION['last_name']]);
+            redirect('login');
+        } else {
+            $this->data['active_user'] = $this->SESSION;
+            $this->data["APP_STORAGE"] = $this->APP_STORAGE;
+        }
 	}
 	public function _auth_(){
 		$app_id = get_cookie("app_id", true);
@@ -21,6 +31,9 @@ class MY_Controller extends CI_Controller
 			redirect(base_url('login')) ;
 		} else {
 			return $app_id;
+		}
+		foreach ($variable as $key => $value) {
+			# code...
 		}
 	}
 

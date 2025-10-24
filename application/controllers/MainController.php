@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class MainController extends CI_Controller
+require_once APPPATH . "core/MY_Controller.php";
+
+class MainController extends MY_Controller
 {
 	public $error, $data;
 

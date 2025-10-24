@@ -93,3 +93,38 @@ if ( ! function_exists('byte_format'))
 		return number_format($num, $precision).' '.$unit;
 	}
 }
+
+if (! function_exists('ordinal_suffix')) {
+	/** * Returns the number with its corresponding ordinal suffix (e.g., 1st, 2nd
+	 * , 3rd, 4th, etc.).
+	 * @param int $number The number to which the ordinal suffix will be added.
+	 * @return string The number with its ordinal suffix.
+	 * @example
+	 * echo ordinal_suffix(1); // Outputs: 1st
+	 */
+	function ordinal_suffix($number) {
+    if (!is_numeric($number)) {
+        return $number; // Return non-numeric input as-is
+    }
+
+    // Convert to absolute integer to handle negative numbers if necessary
+    $number = abs(intval($number));
+
+    // Special case for 11, 12, and 13, which all use "th"
+    if ($number % 100 >= 11 && $number % 100 <= 13) {
+        return $number . 'th';
+    }
+
+    // Determine the suffix based on the last digit
+    switch ($number % 10) {
+        case 1:
+            return $number . 'st';
+        case 2:
+            return $number . 'nd';
+        case 3:
+            return $number . 'rd';
+        default:
+            return $number . 'th';
+    }
+}
+}

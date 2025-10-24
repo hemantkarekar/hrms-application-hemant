@@ -243,24 +243,24 @@ class CI_Config {
 	 */
 	public function site_url($uri = '', $protocol = NULL)
 	{
-		$base_url = $this->slash_item('base_url');
+		$site_url = $this->slash_item('site_url');
 
 		if (isset($protocol))
 		{
 			// For protocol-relative links
 			if ($protocol === '')
 			{
-				$base_url = substr($base_url, strpos($base_url, '//'));
+				$site_url = substr($site_url, strpos($site_url, '//'));
 			}
 			else
 			{
-				$base_url = $protocol.substr($base_url, strpos($base_url, '://'));
+				$site_url = $protocol.substr($site_url, strpos($site_url, '://'));
 			}
 		}
 
 		if (empty($uri))
 		{
-			return $base_url.$this->item('index_page');
+			return $site_url.$this->item('index_page');
 		}
 
 		$uri = $this->_uri_string($uri);
@@ -281,14 +281,14 @@ class CI_Config {
 				}
 			}
 
-			return $base_url.$this->slash_item('index_page').$uri;
+			return $site_url.$this->slash_item('index_page').$uri;
 		}
 		elseif (strpos($uri, '?') === FALSE)
 		{
 			$uri = '?'.$uri;
 		}
 
-		return $base_url.$this->item('index_page').$uri;
+		return $site_url.$this->item('index_page').$uri;
 	}
 
 	// -------------------------------------------------------------

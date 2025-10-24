@@ -52,6 +52,10 @@
 <script type="text/javascript" src="<?= base_url("assets") ?>/vendors/select2/select2.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?= base_url("assets") ?>/vendors/select2/select2.min.css" />
 <!-- Plugin: JQuery daterangepicker  -->
+ 
+<!-- Plugin: Font Awesome Icons  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Plugin: Font Awesome Icons  -->
 
 <!-- inject:css -->
 <link rel="stylesheet" href="<?= base_url("assets") ?>/fonts/feather-font/css/iconfont.css">
@@ -64,6 +68,7 @@
 
 <link rel="shortcut icon" href="<?= base_url("assets") ?>/images/favicon.png" />
 
+<link rel="stylesheet" type="text/css" href="<?= base_url("assets/css") ?>/select2-custom.min.css" />
 <link rel="stylesheet" href="<?= base_url("assets") ?>/css/custom.min.css">
 
 <?php switch (explode(base_url(), current_url())[1]):

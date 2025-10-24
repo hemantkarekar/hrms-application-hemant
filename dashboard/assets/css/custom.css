@@ -1,0 +1,13 @@
+.celebrations {
+  height: 100px;
+  background: url("../images/backgrounds/celebration.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: -3px 3px 3px rgba(0, 0, 0, 0.5);
+}
