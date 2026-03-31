@@ -9,6 +9,7 @@
                                 <img src="<?= base_url('assets/logo.png') ?>" height="40" alt="Platform Logo">
                             </div>
                             <?= form_open(base_url('api/v2/login')) ?>
+                            <input type="hidden" name="redirect" value="<?= $redirect ?? NULL ?>">
                             <div class="mb-3">
                                 <label for="inputUsername" class="form-label">Username</label>
                                 <input type="text" class="form-control" name="username" id="inputUsername">

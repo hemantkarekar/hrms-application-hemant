@@ -1,15 +1,16 @@
-<?php
+<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-class MY_Loader extends CI_Loader
-{
-	public function __construct()
-	{
-		parent::__construct();
-		$CI =& get_instance();
+/* load the MX_Loader class */
+require APPPATH."third_party/MX/Loader.php";
+
+class MY_Loader extends MX_Loader {
+    public function __construct() {
+        parent::__construct();
+        $CI =& get_instance();
         $CI->load = $this;
-	}
-	
-	public function onboarding_view($view, $vars = array(), $return = FALSE)
+    }
+
+    public function onboarding_view($view, $vars = array(), $return = FALSE)
 	{
 		$this->view('layout/_1', $vars);
 		$this->view("onboarding/" . $view, $vars);
@@ -26,5 +27,20 @@ class MY_Loader extends CI_Loader
 		$this->view('layout/_1_mini', $vars);
 		$this->view("error_pages/" . $view, $vars);
 		$this->view('layout/_2_mini', $vars);
+	}
+
+
+    public function admin_dashboard($view, $vars = array(), $return = FALSE)
+	{
+		$this->view('layout/_1', $vars);
+		$this->view("main/" . $view, $vars);
+		$this->view('layout/_2', $vars);
+	}
+	
+	public function event_dashboard($view, $vars = array(), $return = FALSE)
+	{
+		$this->view('layout/_1', $vars);
+		$this->view("main/" . $view, $vars);
+		$this->view('layout/_2', $vars);
 	}
 }

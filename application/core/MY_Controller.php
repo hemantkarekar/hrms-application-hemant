@@ -1,8 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 date_default_timezone_set("Asia/Kolkata");
 
-class MY_Controller extends CI_Controller
+class MY_Controller extends MX_Controller
 {
 	public $COMPANY_NAME, $APP_ID = "", $IP, $APP_STORAGE, $data, $SESSION;
 	public function __construct()
@@ -14,30 +14,33 @@ class MY_Controller extends CI_Controller
 			$this->session->set_flashdata('http_error', 'Please change url to HTTPS!!');
 		}
 		$this->APP_ID = get_cookie("app_id", true);
-        $this->APP_STORAGE = directory_size(FILE_UPLOAD_FOLDER);
-		
-        if(!isset($_SESSION[USERSESSION])){
+		$this->APP_STORAGE = directory_size(FILE_UPLOAD_FOLDER);
+
+		if (!isset($_SESSION[USERSESSION])) {
+			redirect('login?url=' . current_url());
+		} else {
 			$this->SESSION = $_SESSION[USERSESSION];
 			$this->SESSION['name'] = implode(" ", [$this->SESSION['first_name'], $this->SESSION['last_name']]);
-            redirect('login');
-        } else {
-            $this->data['active_user'] = $this->SESSION;
-            $this->data["APP_STORAGE"] = $this->APP_STORAGE;
-        }
+			$this->data['active_user'] = $this->SESSION;
+			$this->data["APP_STORAGE"] = $this->APP_STORAGE;
+		}
 	}
-	public function _access_granted_($modules){
-        return empty(array_diff($modules, json_decode($this->SESSION['role']['modules'])));
-    }
-	public function _auth_(){
+	public function _access_granted_($modules)
+	{
+		return empty(array_diff($modules, json_decode($this->SESSION['role']['modules'])));
+	}
+	public function _auth_()
+	{
 		$app_id = get_cookie("app_id", true);
-		if(( $app_id == null) || ($app_id == "")) {
-			redirect(base_url('login')) ;
+		if (($app_id == null) || ($app_id == "")) {
+			redirect(base_url('login'));
 		} else {
 			return $app_id;
 		}
 	}
 
-	public function get_ip_info(){
+	public function get_ip_info()
+	{
 		$this->load->model('core/IPLocationModel');
 		return $this->IPLocationModel->get($this->IP);
 	}

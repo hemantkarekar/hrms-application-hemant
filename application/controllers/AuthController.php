@@ -1,6 +1,6 @@
 <?php
 
-class AuthController extends CI_Controller
+class AuthController extends MX_Controller
 {
     public $data;
     public function __construct()
@@ -17,9 +17,10 @@ class AuthController extends CI_Controller
     {
         $this->request = $this->input->post();
         $session = $this->UserModel->authorize($this->request);
-        $session['role'] = $this->AccessModel->get(['id' => $session['role']]);
+        // $session['role'] = $this->AccessModel->get(['id' => $session['role_id']]) ?? [];
         $this->session->set_userdata(USERSESSION, $session);
-        redirect('');
+        // print_r($_SESSION[USERSESSION]);
+        redirect(base_url());
     }
 
     public function login()
